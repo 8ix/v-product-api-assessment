@@ -36,18 +36,4 @@ class ProductFactory extends Factory
 
         return "{$brand} {$productType} {$type}";
     }
-
-    /**
-     * Indicate that the Product is processed.
-     *
-     * @return \Database\Factories\TicketFactory
-     */
-    public function processed(): self
-    {
-        return $this->state(fn (array $attributes) => [
-            'status' => true,
-        ]);
-    }
-
-
 }
