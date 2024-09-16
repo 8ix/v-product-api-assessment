@@ -11,8 +11,9 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $request->validate([
-            'q' => 'nullable|string',
-            'per_page' => 'nullable|integer|min:1|max:100',
+            'q' => 'nullable|string|max:255',
+            'page' => 'nullable|integer|min:1',
+            'per_page' => 'nullable|integer|min:1',
         ]);
 
         $query = Product::query()->with('categories');
